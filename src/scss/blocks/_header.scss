@@ -1,0 +1,15 @@
+.header {
+  width: 1140px;
+  max-width: 80%;
+  margin: auto;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 100;
+
+  // .header__nav
+
+  &__nav {
+  }
+}

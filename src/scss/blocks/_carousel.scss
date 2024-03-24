@@ -1,0 +1,184 @@
+.carousel {
+  width: 100lvw;
+  height: 100lvh;
+  overflow: hidden;
+  margin-top: -50px;
+  position: relative;
+
+  // .carousel__list
+
+  &__list {
+  }
+
+  // .carousel__item
+
+  &__item {
+    position: absolute;
+    inset: 0;
+
+    article {
+      width: 100%;
+      height: 100%;
+    }
+
+    &:nth-child(1) {
+      z-index: 1;
+
+      .content__author,
+      .content__title,
+      .content__topic,
+      .content__description,
+      .content__buttons {
+        transform: translateY(50px);
+        filter: blur(20px);
+        opacity: 0;
+        animation: showContent 0.5s 1s linear 1 forwards;
+      }
+      &:nth-child(1) {
+        .content__title {
+          animation-delay: 1.2s;
+        }
+      }
+      &:nth-child(1) {
+        .content__topic {
+          animation-delay: 1.4s;
+        }
+      }
+      &:nth-child(1) {
+        .content__description {
+          animation-delay: 1.6s;
+        }
+      }
+      &:nth-child(1) {
+        .content__buttons {
+          animation-delay: 1.8s;
+        }
+      }
+    }
+  }
+
+  // .carousel__img
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.8);
+  }
+
+  // .carousel__content
+
+  &__content {
+    position: absolute;
+    top: 20%;
+    width: 1140px;
+    max-width: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-right: 30%;
+    text-shadow: 0 5px 10px #0004;
+  
+    @include mobile {
+      padding-right: 0;
+    }
+  }
+}
+
+.carousel {
+  &.next {
+    .carousel__list {
+      .carousel__item {
+        &:nth-child(1) {
+          .carousel__img {
+            width: 150px;
+            height: 220px;
+            position: absolute;
+            left: 50%;
+            bottom: 50px;
+            border-radius: 20px;
+            animation: showImage 0.5s linear 1 forwards;
+          }
+        }
+      }
+    }
+  }
+}
+
+.carousel {
+  &.next {
+    .thumbnail__list {
+      transform: translateX(150px);
+      animation: transformThumbnail 0.5s linear 1 forwards;
+      .thumbnail__item {
+        &:nth-last-child(1) {
+          width: 0;
+          overflow: hidden;
+          animation: showThumbnail 0.5s linear 1 forwards;
+        }
+      }
+    }
+  }
+}
+
+.carousel {
+  &.prev {
+    .carousel__list {
+      .carousel__item {
+        &:nth-child(2) {
+          z-index: 2;
+
+          // .carousel__img
+          .carousel__img {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            animation: outImage 0.5s linear 0.1s forwards;
+          }
+
+          // .content__author
+          // .content__title
+          // .content__topic
+          // .content__description
+          // .content__buttons
+
+          .content__author,
+          .content__title,
+          .content__topic,
+          .content__description,
+          .content__buttons {
+            animation: contentOut 1.5s linear 1 forwards;
+          }
+        }
+      }
+    }
+  }
+}
+
+.carousel {
+  &.prev {
+    .thumbnail__list {
+      .thumbnail__item {
+        &:nth-child(1) {
+          width: 0;
+          overflow: hidden;
+          opacity: 0;
+          animation: showThumbnail 0.5s linear 1 forwards;
+        }
+      }
+    }
+  }
+}
+
+.carousel {
+  &.prev,
+  &.next {
+    .arrows {
+      button {
+        pointer-events: none;
+      }
+    }
+    .time {
+      animation: timeRunning 2s linear 1 forwards;
+    }
+  }
+}

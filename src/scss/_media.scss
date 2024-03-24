@@ -1,0 +1,14 @@
+$mobile-above: 678px;
+$mobile: 677.98px;
+
+@mixin mobile-above {
+  @media screen and (min-width: $mobile-above) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media screen and (max-width: $mobile) {
+    @content;
+  }
+}

@@ -1,0 +1,46 @@
+.content {
+  // .content__author
+
+  &__author {
+    font-weight: bold;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+  }
+
+  // .content__title
+  // .content__topic
+
+  &__title,
+  &__topic {
+    font-weight: bold;
+    font-size: 5em;
+    line-height: 1.3em;
+    text-transform: uppercase;
+  }
+
+  &__topic {
+    color: #f1683a;
+  }
+
+  // .content__description
+
+  &__description {
+    font-size: 1.33em;
+  }
+
+  // .content__buttons
+
+  &__buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 130px);
+    grid-template-rows: 40px;
+    gap: 5px;
+    margin-top: 20px;
+  }
+
+  @include mobile {
+    &__title {
+      font-size: 30px;
+    }
+  }
+}
